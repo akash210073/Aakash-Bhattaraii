@@ -75,23 +75,6 @@ drop.pack(anchor='nw',pady=315,padx=188,ipadx=108)
 # myButton = Button(root, text='gender', command=show) .pack()
 #myButton.grid(row=4, column=1, padx=10, pady=10, sticky=W)
 
-lbl_contact=Label(my_frame, text='CONTACT', font=('times new roman',20,'bold'),fg='white',bg='black')
-lbl_contact.grid(row=5, column=0, padx=20, pady=10, sticky=W)
-
-contact_entry=Entry(my_frame,font=('times new roman',20,'bold'))
-contact_entry.grid(row=5, column=1, padx=20, pady=10, sticky=W)
-
-lbl_package=Label(my_frame, text='PACKAGE', font=('times new roman',20,'bold'),fg='white',bg='black')
-lbl_package.grid(row=6, column=0, padx=20, pady=10, sticky=W)
-
-package_entry=Entry(my_frame,font=('times new roman',20,'bold'))
-package_entry.grid(row=6, column=1, padx=20, pady=10, sticky=W)
-
-lbl_address=Label(my_frame, text='ADDRESS', font=('times new roman',20,'bold'),fg='white',bg='black')
-lbl_address.grid(row=7, column=0, padx=20, pady=10, sticky=W)
-
-add_entry=Entry(my_frame,font=('times new roman',20,'bold'))
-add_entry.grid(row=7, column=1, padx=20, pady=10, sticky=W)
 
 
 def submit():
