@@ -30,7 +30,7 @@ c = conn.cursor()
 # """)
 # messagebox.showinfo("User Registration Table Created Successfully", "You can now add the data")
 
-myLabel = Label(root, text='SUBSCRIBER MANAGEMENT SYSTEM', font=('times new roman',30, 'bold'), fg='white', bg='black', bd=4, relief=RAISED)
+myLabel = Label(root, text='SUBSCRIBER MANAGEMENT SYSTEM', font=('Calibri',30, 'bold'), fg='white', bg='black', bd=4, relief=RAISED)
 myLabel.pack(side=TOP, fill=X)
 
 #manage frame
@@ -38,29 +38,29 @@ my_frame = Frame(root, bd=4, relief = RIDGE, bg= 'black')
 my_frame.place(x=20, y= 80, width=550, height=600)
 
 #manage title
-M_title=Label(my_frame,text='MANAGE SUBSCRIBER', font=('times new roman',30, 'bold'), fg='white', bg='black', bd=4, relief=RAISED)
+M_title=Label(my_frame,text='MANAGE SUBSCRIBER', font=('Calibri',30, 'bold'), fg='white', bg='black', bd=4, relief=RAISED)
 M_title.grid(row=0, columnspan=2, padx=20, pady=20)
 
 #labels
-lbl_userid=Label(my_frame, text='USER ID', font=('times new roman',20,'bold'),fg='white',bg='black')
+lbl_userid=Label(my_frame, text='USER ID', font=('Calibri',18,'bold'),fg='white',bg='black')
 lbl_userid.grid(row=1, column=0, padx=20, pady=10, sticky=W)
 
-userid_entry=Entry(my_frame,font=('times new roman',20,'bold'))
+userid_entry=Entry(my_frame,font=('Calibri',18,'bold'))
 userid_entry.grid(row=1, column=1, padx=20, pady=10, sticky=W)
 
-lbl_name=Label(my_frame, text='NAME', font=('times new roman',20,'bold'),fg='white',bg='black')
+lbl_name=Label(my_frame, text='NAME', font=('Calibri',18,'bold'),fg='white',bg='black')
 lbl_name.grid(row=2, column=0, padx=20, pady=10, sticky=W)
 
-name_entry=Entry(my_frame,font=('times new roman',20,'bold'))
+name_entry=Entry(my_frame,font=('Calibri',18,'bold'))
 name_entry.grid(row=2, column=1, padx=20, pady=10, sticky=W)
 
-lbl_email=Label(my_frame, text='EMAIL', font=('times new roman',20,'bold'),fg='white',bg='black')
+lbl_email=Label(my_frame, text='EMAIL', font=('Calibri',18,'bold'),fg='white',bg='black')
 lbl_email.grid(row=3, column=0, padx=20, pady=10, sticky=W)
 
-email_entry=Entry(my_frame,font=('times new roman',20,'bold'))
+email_entry=Entry(my_frame,font=('Calibri',18,'bold'))
 email_entry.grid(row=3, column=1, padx=20, pady=10, sticky=W)
 
-lbl_gender=Label(my_frame, text='GENDER', font=('times new roman',20,'bold'),fg='white',bg='black')
+lbl_gender=Label(my_frame, text='GENDER', font=('Calibri',18,'bold'),fg='white',bg='black')
 lbl_gender.grid(row=4, column=0, padx=20, pady=10, sticky=W)
 
 def show():
@@ -75,22 +75,22 @@ drop.pack(anchor='nw',pady=315,padx=188,ipadx=108)
 # myButton = Button(root, text='gender', command=show) .pack()
 #myButton.grid(row=4, column=1, padx=10, pady=10, sticky=W)
 
-lbl_contact=Label(my_frame, text='CONTACT', font=('times new roman',20,'bold'),fg='white',bg='black')
+lbl_contact=Label(my_frame, text='CONTACT', font=('Calibri',18,'bold'),fg='white',bg='black')
 lbl_contact.grid(row=5, column=0, padx=20, pady=10, sticky=W)
 
-contact_entry=Entry(my_frame,font=('times new roman',20,'bold'))
+contact_entry=Entry(my_frame,font=('Calibri',18,'bold'))
 contact_entry.grid(row=5, column=1, padx=20, pady=10, sticky=W)
 
-lbl_package=Label(my_frame, text='PACKAGE', font=('times new roman',20,'bold'),fg='white',bg='black')
+lbl_package=Label(my_frame, text='PACKAGE', font=('Calibri',18,'bold'),fg='white',bg='black')
 lbl_package.grid(row=6, column=0, padx=20, pady=10, sticky=W)
 
-package_entry=Entry(my_frame,font=('times new roman',20,'bold'))
+package_entry=Entry(my_frame,font=('Calibri',18,'bold'))
 package_entry.grid(row=6, column=1, padx=20, pady=10, sticky=W)
 
-lbl_address=Label(my_frame, text='ADDRESS', font=('times new roman',20,'bold'),fg='white',bg='black')
+lbl_address=Label(my_frame, text='ADDRESS', font=('Calibri',18,'bold'),fg='white',bg='black')
 lbl_address.grid(row=7, column=0, padx=20, pady=10, sticky=W)
 
-add_entry=Entry(my_frame,font=('times new roman',20,'bold'))
+add_entry=Entry(my_frame,font=('Calibri',18,'bold'))
 add_entry.grid(row=7, column=1, padx=20, pady=10, sticky=W)
 
 
@@ -198,43 +198,43 @@ def edit():
     global subscriber_address_editor
 
     # Creating texy boxes
-    subscriber_userid = Label(editor, font=("Times New Roman", 15, "bold"), width=18, text="Subscriber User Id ")
+    subscriber_userid = Label(editor, font=("Calibri", 14, "bold"), width=18, text="Subscriber User Id ")
     subscriber_userid.place(x=10, y=50)
 
-    subscriber_userid_editor = Entry(editor, font=("Times New Roman", 15, "bold"), width=18)
+    subscriber_userid_editor = Entry(editor, font=("Calibri", 14, "bold"), width=18)
     subscriber_userid_editor.place(x=260, y=50)
 
-    subscriber_name = Label(editor, font=("Times New Roman", 15, "bold"), width=18, text="Subscriber Name")
+    subscriber_name = Label(editor, font=("Calibri", 14, "bold"), width=18, text="Subscriber Name")
     subscriber_name.place(x=10, y=100)
 
-    subscriber_name_editor = Entry(editor, font=("Times New Roman", 15, "bold"), width=18)
+    subscriber_name_editor = Entry(editor, font=("Calibri", 14, "bold"), width=18)
     subscriber_name_editor.place(x=260, y=100)
 
-    subscriber_email = Label(editor, font=("Times New Roman", 15, "bold"), text="Subscriber Email", width=18)
+    subscriber_email = Label(editor, font=("Calibri", 14, "bold"), text="Subscriber Email", width=18)
     subscriber_email.place(x=10, y=150)
 
-    subscriber_email_editor = Entry(editor, font=("Times New Roman", 15, "bold"), width=18)
+    subscriber_email_editor = Entry(editor, font=("Calibri", 14, "bold"), width=18)
     subscriber_email_editor.place(x=260, y=150)
 
-    subscriber_contact = Label(editor, font=("Times New Roman", 15, "bold"), text="Subscriber Contact", width=18)
+    subscriber_contact = Label(editor, font=("Calibri", 14, "bold"), text="Subscriber Contact", width=18)
     subscriber_contact.place(x=10, y=200)
 
-    subscriber_contact_editor = Entry(editor, font=("Times New Roman", 15, "bold"), width=18)
+    subscriber_contact_editor = Entry(editor, font=("Calibri", 14, "bold"), width=18)
     subscriber_contact_editor.place(x=260, y=200)
 
-    subscriber_dob = Label(editor, font=("Times New Roman", 15, "bold"), width=18, text="Subscriber package")
+    subscriber_dob = Label(editor, font=("Calibri", 14, "bold"), width=18, text="Subscriber package")
     subscriber_dob.place(x=10, y=250)
 
-    subscriber_package_editor = Entry(editor, font=("Times New Roman", 15, "bold"), width=18)
+    subscriber_package_editor = Entry(editor, font=("Calibri", 14, "bold"), width=18)
     subscriber_package_editor.place(x=260, y=250)
 
-    subscriber_address = Label(editor, font=("Times New Roman", 15, "bold"), width=18, text="Subscriber Address")
+    subscriber_address = Label(editor, font=("Calibri", 14, "bold"), width=18, text="Subscriber Address")
     subscriber_address.place(x=10, y=300)
 
-    subscriber_address_editor = Entry(editor, font=("Times New Roman", 15, "bold"), width=18)
+    subscriber_address_editor = Entry(editor, font=("Calibri", 14, "bold"), width=18)
     subscriber_address_editor.place(x=260, y=300)
 
-    save_btn = Button(editor, font=("Times New Roman", 15, "bold"), text="Save", command=update)
+    save_btn = Button(editor, font=("Calibri", 14, "bold"), text="Save", command=update)
     save_btn.place(x=200, y=400)
 
     # Loop through the results
@@ -251,13 +251,13 @@ def edit():
 btn_frame=Frame(root,bd = 4, relief=RIDGE, bg='grey')
 btn_frame.place(x=30, y=600, width=500)
 
-add_btn=Button(btn_frame, text='ADD', width=13, height=2,font=("Times New Roman", 10, "bold"), fg='black', bg='yellow', command=submit)
+add_btn=Button(btn_frame, text='ADD', width=13, height=2,font=("Times New Roman", 8, "bold"), fg='black', bg='yellow', command=submit)
 add_btn.grid(row=0, column=0, padx=10, pady=10, ipadx=20)
 
-update_btn=Button(btn_frame, text='UPDATE', width=13, height=2, font=("Times New Roman", 10, "bold"), fg='black', bg='yellow', command=edit)
+update_btn=Button(btn_frame, text='UPDATE', width=13, height=2, font=("Times New Roman", 8, "bold"), fg='black', bg='yellow', command=edit)
 update_btn.grid(row=0, column=1, padx=10, pady=10, ipadx=20)
 
-delete_btn=Button(btn_frame, text='DELETE', width=13, height=2, font=("Times New Roman", 10, "bold"), fg='black', bg='yellow', command=delete)
+delete_btn=Button(btn_frame, text='DELETE', width=13, height=2, font=("Times New Roman", 8, "bold"), fg='black', bg='yellow', command=delete)
 delete_btn.grid(row=0, column=2, padx=10, pady=10, ipadx=20)
 
 
@@ -265,7 +265,7 @@ delete_btn.grid(row=0, column=2, padx=10, pady=10, ipadx=20)
 Details_frame = Frame(root, bd=4, relief = RIDGE, bg= 'grey')
 Details_frame.place(x=600, y= 80, width=900, height=600)
 
-search_lbl=Label(Details_frame, text='INFORMATIONS OF SUBSCRIBER', font=('times new roman',20,'bold'),fg='black',bg='grey')
+search_lbl=Label(Details_frame, text='INFORMATIONS OF SUBSCRIBER', font=('Calibri", 14,',20,'bold'),fg='black',bg='grey')
 search_lbl.grid(row=1, column=0, padx=20, pady=10, sticky=W)
 
 # Function for viewing data
@@ -279,7 +279,7 @@ def View():
     con1.close()
 
 
-show11_btn=Button(Details_frame, text='SHOW ALL', width=13, height=2,font=("Times New Roman", 10, "bold"), fg='white', bg='black', command=View)
+show11_btn=Button(Details_frame, text='SHOW ALL', width=13, height=2,font=("Calibri", 10, "bold"), fg='white', bg='black', command=View)
 show11_btn.grid(row=1, column=4, padx=10, pady=10, ipadx=20)
 
 # Table frame

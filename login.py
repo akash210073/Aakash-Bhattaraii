@@ -6,7 +6,7 @@ import os
 
 root = Tk()
 root.title('Login Page')
-root.geometry("700x600")
+root.geometry("800x600")
 root.resizable(0,0)
 root.configure(bg="black")
 
@@ -14,17 +14,17 @@ root.configure(bg="black")
 
 
 # Creating User Entry
-username_label = Label(root, bg="black", fg="white", text="Username: ", font=("Times New Roman", 20, "bold")).place(x=80, y=103)
+username_label = Label(root, bg="black", fg="white", text="Username: ", font=("Calibri", 20, "bold")).place(x=80, y=103)
 
-username = Entry(root, width=30, borderwidth=10, fg="black", bg="white", font=("Times New Roman", 20, "bold"), justify=LEFT)
+username = Entry(root, width=30, borderwidth=10, fg="black", bg="white", font=("Calibri", 20, "bold"), justify=LEFT)
 username.place(x=220, y=100)
 
 
 
 # Creating Password Entry
-password_label = Label(root, bg="black", fg="white", text="Password: ", font=("Times New Roman", 20, "bold")).place(x=80, y=183)
+password_label = Label(root, bg="black", fg="white", text="Password: ", font=("Calibri", 20, "bold")).place(x=80, y=183)
 
-password = Entry(root, width=30, borderwidth=10, fg="white", bg="white", font=("Times New Roman", 20, "bold"), justify=LEFT)
+password = Entry(root, width=30, borderwidth=10, fg="white", bg="white", font=("Calibri", 20, "bold"), justify=LEFT)
 password.config(show="*",fg="black")
 password.place(x=220, y=180)
 
@@ -63,7 +63,7 @@ def new_registration():
     root.destroy()
     reg_page = Tk()
     reg_page.title('Registration Page')
-    reg_page.geometry("650x500")
+    reg_page.geometry("850x500")
     reg_page.resizable(0, 0)
     reg_page.configure(bg="black")
     # # Creating a database or connect to one
@@ -85,27 +85,27 @@ def new_registration():
     # messagebox.showinfo("User Registration Table Created Successfully", "You can now add the data")
 
     # Creating text boxes
-    new_reg_label = Label(reg_page, text="New Registration", font=("Times New Roman", 23, "bold"),fg='white', bg='black', bd=4, relief=RAISED).place(x=150, y=30)
+    new_reg_label = Label(reg_page, text="New Registration", font=("Calibri", 23, "bold"),fg='white', bg='black', bd=4, relief=RAISED).place(x=150, y=30)
 
-    user_name_label = Label(reg_page, text="User Name:", font=("Times New Roman", 23, "bold"),bg="black",fg="white").place(x=30, y=110)
+    user_name_label = Label(reg_page, text="User Name:", font=("Calibri", 23, "bold"),bg="black",fg="white").place(x=30, y=110)
 
-    user_name = Entry(reg_page, font=("Times New Roman", 23, "bold"))
+    user_name = Entry(reg_page, font=("Calibri", 23, "bold"))
     user_name.place(x=300, y=110)
 
-    address_label = Label(reg_page, text="Address:", font=("Times New Roman", 21, "bold"),bg="black",fg="white").place(x=30, y=170)
+    address_label = Label(reg_page, text="Address:", font=("Calibri", 21, "bold"),bg="black",fg="white").place(x=30, y=170)
 
     address = Entry(reg_page, font=("Times New Roman", 23, "bold"))
     address.place(x=300, y=170)
 
-    password_label = Label(reg_page, text="Password:", font=("Times New Roman", 21, "bold"),bg="black",fg="white").place(x=30, y=230)
+    password_label = Label(reg_page, text="Password:", font=("Calibri", 21, "bold"),bg="black",fg="white").place(x=30, y=230)
 
-    password = Entry(reg_page, font=("Times New Roman", 23, "bold"))
+    password = Entry(reg_page, font=("Calibri", 23, "bold"))
     password.place(x=300, y=230)
 
-    confirm_password_label = Label(reg_page, text="Confirm Password:", font=("Times New Roman", 21, "bold"),bg="black",fg="white").place(x=30,
+    confirm_password_label = Label(reg_page, text="Confirm Password:", font=("Calibri", 21, "bold"),bg="black",fg="white").place(x=30,
                                                                                                                   y=290)
 
-    confirm_password = Entry(reg_page, font=("Times New Roman", 23, "bold"))
+    confirm_password = Entry(reg_page, font=("Calibri", 23, "bold"))
     confirm_password.place(x=300, y=290)
 
     # Creating a  submit button for the database
@@ -150,19 +150,19 @@ def new_registration():
         conn.close()
 
     # Creating a submit button
-    register_btn = Button(reg_page, text="Register", font=("Times New Roman", 21, "normal"), command=register)
+    register_btn = Button(reg_page, text="Register", font=("Calibri", 21, "normal"), command=register)
     register_btn.place(x=330, y=350)
 
     # View Record Button to test if the data is being stored
-    show_record_btn = Button(text="Show Records", font=('Century Gothic', 20, 'normal'), command=view_records)
+    show_record_btn = Button(text="Show Records", font=('Calibri', 20, 'normal'), command=view_records)
     show_record_btn.place(x=60, y=350)
     reg_page.mainloop()
 
 # Creating Login Button
-login_btn = Button(root, width=20, borderwidth=10, bg="white", text="Login", font=("Times New Roman", 22, "bold"),command=try_login )\
+login_btn = Button(root, width=20, borderwidth=10, bg="white", text="Login", font=("Calibri", 22, "bold"),command=try_login )\
     .place(x=250, y=250)
 
-new_user_reg_label = Button(root, width=20, borderwidth=10, bg="white", text="For New User", font=("Times New Roman", 22, "bold"), command=new_registration)\
+new_user_reg_label = Button(root, width=20, borderwidth=10, bg="white", text="For New User", font=("Calibri", 22, "bold"), command=new_registration)\
     .place(x=250, y=350)
 
 root.mainloop()
