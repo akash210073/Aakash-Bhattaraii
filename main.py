@@ -13,13 +13,13 @@ root.geometry('1700x700')
 
 # Creating Table
 # Creating a database or connect to one
-conn = sqlite3.connect('database.db')
+conn = sqlite3.connect('aakash.db')
 
 # Create Cursor
 c = conn.cursor()
 
 # Create Table for storing registration details
-# c.execute(""" CREATE TABLE sub_data(
+# c.execute(""" CREATE TABLE store_data(
 #         subscriber_userid text,
 #         subscriber_name text,
 #         subscriber_email text,
@@ -45,8 +45,8 @@ M_title.grid(row=0, columnspan=2, padx=20, pady=20)
 lbl_userid=Label(my_frame, text='USER ID', font=('times new roman',20,'bold'),fg='white',bg='black')
 lbl_userid.grid(row=1, column=0, padx=20, pady=10, sticky=W)
 
-roll_entry=Entry(my_frame,font=('times new roman',20,'bold'))
-roll_entry.grid(row=1, column=1, padx=20, pady=10, sticky=W)
+userid_entry=Entry(my_frame,font=('times new roman',20,'bold'))
+userid_entry.grid(row=1, column=1, padx=20, pady=10, sticky=W)
 
 lbl_name=Label(my_frame, text='NAME', font=('times new roman',20,'bold'),fg='white',bg='black')
 lbl_name.grid(row=2, column=0, padx=20, pady=10, sticky=W)
@@ -75,16 +75,33 @@ drop.pack(anchor='nw',pady=315,padx=188,ipadx=108)
 # myButton = Button(root, text='gender', command=show) .pack()
 #myButton.grid(row=4, column=1, padx=10, pady=10, sticky=W)
 
+lbl_contact=Label(my_frame, text='CONTACT', font=('times new roman',20,'bold'),fg='white',bg='black')
+lbl_contact.grid(row=5, column=0, padx=20, pady=10, sticky=W)
+
+contact_entry=Entry(my_frame,font=('times new roman',20,'bold'))
+contact_entry.grid(row=5, column=1, padx=20, pady=10, sticky=W)
+
+lbl_package=Label(my_frame, text='PACKAGE', font=('times new roman',20,'bold'),fg='white',bg='black')
+lbl_package.grid(row=6, column=0, padx=20, pady=10, sticky=W)
+
+package_entry=Entry(my_frame,font=('times new roman',20,'bold'))
+package_entry.grid(row=6, column=1, padx=20, pady=10, sticky=W)
+
+lbl_address=Label(my_frame, text='ADDRESS', font=('times new roman',20,'bold'),fg='white',bg='black')
+lbl_address.grid(row=7, column=0, padx=20, pady=10, sticky=W)
+
+add_entry=Entry(my_frame,font=('times new roman',20,'bold'))
+add_entry.grid(row=7, column=1, padx=20, pady=10, sticky=W)
 
 
 def submit():
     # Create a database or connect to one
-    conn = sqlite3.connect('database.db')
+    conn = sqlite3.connect('aakash.db')
 
     c = conn.cursor()
 
     # Insert into table
-    c.execute("INSERT INTO sub_data VALUES (:userid_entry, :name_entry, :email_entry, :contact_entry, :package_entry, :add_entry)",{
+    c.execute("INSERT INTO store_data VALUES (:userid_entry, :name_entry, :email_entry, :contact_entry, :package_entry, :add_entry)",{
         'userid_entry' : userid_entry.get(),
         'name_entry': name_entry.get(),
         'email_entry': email_entry.get(),
@@ -108,11 +125,11 @@ def submit():
 
 
 def delete():
-    con1 = sqlite3.connect("database.db")
+    con1 = sqlite3.connect("aakash.db")
 
     cur1 = con1.cursor()
 
-    cur1.execute("DELETE from sub_data WHERE subscriber_user_id = " + userid_entry.get())
+    cur1.execute("DELETE from store_data WHERE subscriber_user_id = " + userid_entry.get())
 
     messagebox.showinfo("Yes", "Deleted Successfully")
 
@@ -121,14 +138,14 @@ def delete():
 
 def update():
     # Creating a database or connect to one
-    con1 = sqlite3.connect('database.db')
+    con1 = sqlite3.connect('aakash.db')
 
     # Create cursor
     cur1 = con1.cursor()
 
     record_id = userid_entry.get()
 
-    cur1.execute(""" UPDATE sub_data SET
+    cur1.execute(""" UPDATE store_data SET
             subscriber_user_id = :sub_user_id,
             subscriber_name = :sub_name,
             subscriber_email = :sub_email,
@@ -160,15 +177,15 @@ def edit():
     editor.config(bg="silver")
 
     # Create a database or connect to one
-    con1 = sqlite3.connect('database.db')
+    con1 = sqlite3.connect('aakash.db')
 
     # Create cursor
     cur1 = con1.cursor()
 
-    record_id = roll_entry.get()
+    record_id = userid_entry.get()
 
     # Query of the database
-    cur1.execute("SELECT * FROM sub_data WHERE subscriber_user_id=" + record_id)
+    cur1.execute("SELECT * FROM sto_data WHERE subscriber_user_id=" + record_id)
 
     records = cur1.fetchall()
 
@@ -205,7 +222,7 @@ def edit():
     subscriber_contact_editor = Entry(editor, font=("Times New Roman", 15, "bold"), width=18)
     subscriber_contact_editor.place(x=260, y=200)
 
-    subscriber_dob = Label(editor, font=("Times New Roman", 15, "bold"), width=18, text="Subscriber DOB")
+    subscriber_dob = Label(editor, font=("Times New Roman", 15, "bold"), width=18, text="Subscriber package")
     subscriber_dob.place(x=10, y=250)
 
     subscriber_package_editor = Entry(editor, font=("Times New Roman", 15, "bold"), width=18)
@@ -253,9 +270,9 @@ search_lbl.grid(row=1, column=0, padx=20, pady=10, sticky=W)
 
 # Function for viewing data
 def View():
-    con1 = sqlite3.connect("database.db")
+    con1 = sqlite3.connect("aakash.db")
     cur1 = con1.cursor()
-    cur1.execute("SELECT * FROM sub_data")
+    cur1.execute("SELECT * FROM store_data")
     rows = cur1.fetchall()
     for row in rows:
         Subscriber_table.insert("", tk.END, values=row)
@@ -281,7 +298,7 @@ scroll_x.config(command=Subscriber_table.xview)
 scroll_y.config(command=Subscriber_table.yview)
 
 
-Subscriber_table.heading("userid", text="Roll No.")
+Subscriber_table.heading("userid", text="UserId")
 Subscriber_table.column("userid", width=100)
 Subscriber_table.heading("name", text="Name")
 Subscriber_table.column("name", width=100)
@@ -290,7 +307,7 @@ Subscriber_table.column("email", width=100)
 
 Subscriber_table.heading("contact", text="Contact")
 Subscriber_table.column("contact", width=100)
-Subscriber_table.heading("package", text="DOB")
+Subscriber_table.heading("package", text="Package")
 Subscriber_table.column("package", width=100)
 Subscriber_table.heading("address", text="Address")
 Subscriber_table.column("address", width=100)
