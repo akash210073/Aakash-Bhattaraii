@@ -166,3 +166,27 @@ new_user_reg_label = Button(root, width=20, borderwidth=10, bg="white", text="Fo
     .place(x=250, y=350)
 
 root.mainloop()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
